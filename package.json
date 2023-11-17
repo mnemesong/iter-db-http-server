@@ -4,7 +4,10 @@
   "description": "server, runs list-db database",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "server:http": "node ./js/src/index -p 3000 -fp ./test.json -at 111 -at asdlkmsa",
+    "call:http": "node ./js/test/IterDbHttpTest",
+    "call:http:invalid": "node ./js/test/IterDbHttpWrongAuthTest"
   },
   "repository": {
     "type": "git",
@@ -12,16 +15,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mnemesong/list-db-server/issues"
   },
   "homepage": "https://github.com/mnemesong/list-db-server#readme",
   "devDependencies": {
     "@types/node": "<=13.4",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "uralsjs-axios-ajax": ">=0.2.1"
   },
   "dependencies": {
-    "iter-db": "^0.0.2"
+    "iter-db": "^0.0.5"
   }
 }
