@@ -23,19 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseConsoleArgs = exports.serverTypes = void 0;
+exports.parseConsoleArgs = void 0;
 var iterDb = __importStar(require("iter-db"));
 var uuid_1 = require("uuid");
 var assert = __importStar(require("assert"));
 var path = __importStar(require("path"));
-exports.serverTypes = ["http"];
 var parseConsoleArgs = function () {
     var args = process.argv;
     var params = {
         filePath: null,
         token: (0, uuid_1.v4)(),
         writeDelay: 3000,
-        server: "http",
         unref: false,
         port: 3000
     };
@@ -47,11 +45,6 @@ var parseConsoleArgs = function () {
         else if (a === "-fp") {
             assert.ok(args[i + 1], "no file-path value for flag -fp");
             params.filePath = path.resolve(args[i + 1]);
-        }
-        else if (a === "-st") {
-            assert.ok(args[i + 1], "no server-type value for flag -st");
-            assert.ok(exports.serverTypes.includes(args[i + 1]), "Invalid server type");
-            params.server = args[i + 1];
         }
         else if (a === "-wd") {
             params.writeDelay = parseInt(args[i + 1]);
@@ -72,7 +65,6 @@ var parseConsoleArgs = function () {
             unref: params.unref,
             fileDelay: params.writeDelay
         }),
-        server: params.server,
         port: params.port
     };
 };

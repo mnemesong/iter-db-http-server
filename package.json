@@ -1,7 +1,7 @@
 {
   "name": "iter-db-http-server",
   "version": "0.0.1",
-  "description": "server, runs list-db database",
+  "description": "server, runs iter-db database",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
@@ -13,15 +13,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mnemesong/list-db-server.git"
+    "url": "git+https://github.com/mnemesong/iter-db-http-server.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "db-server",
+    "database",
+    "http",
+    "iterdb"
+  ],
+  "author": "Anatoly Starodubtsev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mnemesong/list-db-server/issues"
+    "url": "https://github.com/mnemesong/iter-db-http-server/issues"
   },
-  "homepage": "https://github.com/mnemesong/list-db-server#readme",
+  "homepage": "https://github.com/mnemesong/iter-db-http-server#readme",
   "devDependencies": {
     "@types/node": "<=13.4",
     "typescript": "^4.9.4",
