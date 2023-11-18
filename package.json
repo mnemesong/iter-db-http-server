@@ -1,13 +1,15 @@
 {
-  "name": "list-db-server",
+  "name": "iter-db-http-server",
   "version": "0.0.1",
   "description": "server, runs list-db database",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "server:http": "node ./js/src/index -p 3000 -fp ./test.json -at 111 -at asdlkmsa",
-    "call:http": "node ./js/test/IterDbHttpTest",
-    "call:http:invalid": "node ./js/test/IterDbHttpWrongAuthTest"
+    "server": "node ./js/src/bin -p 3000 -fp ./test.json -at 111 -at asdlkmsa",
+    "call:add": "node ./js/test/test-req-add-val",
+    "call:invalid": "node ./js/test/test-req-invalid",
+    "call:reg": "node ./js/test/test-req-ask-iter",
+    "call:next": "node ./js/test/test-req-ask-next"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,6 @@
   },
   "dependencies": {
     "iter-db": "^0.0.5"
-  }
+  },
+  "bin": "./js/src/bin.js"
 }

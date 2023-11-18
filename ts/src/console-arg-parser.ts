@@ -1,6 +1,7 @@
 import * as iterDb from "iter-db"
 import { v4 as uuid } from "uuid";
 import * as assert from "assert"
+import * as path from "path"
 
 export const serverTypes = ["http"] as const
 
@@ -35,7 +36,7 @@ export const parseConsoleArgs = (): result => {
             params.token = args[i + 1]
         } else if (a === "-fp") {
             assert.ok(args[i + 1], "no file-path value for flag -fp")
-            params.filePath = args[i + 1]
+            params.filePath = path.resolve(args[i + 1])
         } else if (a === "-st") {
             assert.ok(args[i + 1], "no server-type value for flag -st")
             assert.ok(serverTypes.includes(args[i + 1] as unknown as serverType), "Invalid server type")

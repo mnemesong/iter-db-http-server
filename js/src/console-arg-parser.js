@@ -27,6 +27,7 @@ exports.parseConsoleArgs = exports.serverTypes = void 0;
 var iterDb = __importStar(require("iter-db"));
 var uuid_1 = require("uuid");
 var assert = __importStar(require("assert"));
+var path = __importStar(require("path"));
 exports.serverTypes = ["http"];
 var parseConsoleArgs = function () {
     var args = process.argv;
@@ -45,7 +46,7 @@ var parseConsoleArgs = function () {
         }
         else if (a === "-fp") {
             assert.ok(args[i + 1], "no file-path value for flag -fp");
-            params.filePath = args[i + 1];
+            params.filePath = path.resolve(args[i + 1]);
         }
         else if (a === "-st") {
             assert.ok(args[i + 1], "no server-type value for flag -st");

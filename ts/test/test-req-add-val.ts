@@ -1,4 +1,3 @@
-import { iterReq } from "iter-db"
 import * as uralsAxios from "uralsjs-axios-ajax"
 
 uralsAxios.node.sendAjaxSync({
