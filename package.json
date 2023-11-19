@@ -1,6 +1,6 @@
 {
   "name": "iter-db-http-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "server, runs iter-db database",
   "main": "./js/src/index.js",
   "scripts": {
