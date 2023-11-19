@@ -21,6 +21,7 @@ where flags is:
 - `-wd` - min delay before iterations of reserving data from memory to .json store file. Next command-line-parameter should be integer positive value in milliseconds.
 - `-u` - unlink flag. Next command-line-parameter should be `0`(default) or `1`. If equals `1`, db event cycle will unlink and script may be finished.
 - `-p` - port flag. Next command-line-parameter shpuel be port value.
+- `-cao` - cors-allow-origin flag.
 
 #### Example of command
 `npx iter-db-http-server -p 3000 -fp ./test.json -at as7g8-8dashg9`

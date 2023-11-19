@@ -5,4 +5,4 @@ import { runHttpServer } from "./iter-db-http-server"
 const argsParseResult = parseConsoleArgs()
 
 const shell = argsParseResult.shell
-runHttpServer(shell, argsParseResult.port)
+runHttpServer(shell, argsParseResult.port, argsParseResult.corsAllowOrigin)

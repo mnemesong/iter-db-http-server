@@ -1,11 +1,11 @@
 {
   "name": "iter-db-http-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "server, runs iter-db database",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "server": "node ./js/src/bin -p 3000 -fp ./test.json -at 111 -at asdlkmsa",
+    "server": "node ./js/src/bin -p 3000 -fp ./test.json -at 111 -at asdlkmsa -cao *",
     "call:add": "node ./js/test/test-req-add-val",
     "call:invalid": "node ./js/test/test-req-invalid",
     "call:reg": "node ./js/test/test-req-ask-iter",

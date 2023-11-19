@@ -5,7 +5,8 @@ import * as path from "path"
 
 export type result = {
     shell: iterDb.IterDbShell,
-    port: number
+    port: number,
+    corsAllowOrigin: string[],
 }
 
 export const parseConsoleArgs = (): result => {
@@ -15,13 +16,15 @@ export const parseConsoleArgs = (): result => {
         token: string
         writeDelay: number,
         unref: boolean,
-        port: number
+        port: number,
+        corsAllowOrigin: string[],
     } = {
         filePath: null,
         token: uuid(),
         writeDelay: 3000,
         unref: false,
-        port: 3000
+        port: 3000,
+        corsAllowOrigin: []
     }
     args.forEach((a, i) => {
         if (a === "-at") {
@@ -40,6 +43,9 @@ export const parseConsoleArgs = (): result => {
             params.unref = args[i + 1] === "0" ? false : true
         } else if (a === "-p") {
             params.port = parseInt(args[i + 1])
+        } else if (a === "-cao") {
+            assert.ok(args[i + 1], "no cors-allow-origin value for flag -cao")
+            params.corsAllowOrigin.push(args[i + 1])
         }
     })
     console.log("authToken: " + params.token)
@@ -50,6 +56,7 @@ export const parseConsoleArgs = (): result => {
             unref: params.unref,
             fileDelay: params.writeDelay
         }),
-        port: params.port
+        port: params.port,
+        corsAllowOrigin: params.corsAllowOrigin
     }
 }

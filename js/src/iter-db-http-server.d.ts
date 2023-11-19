@@ -1,2 +1,2 @@
 import { IterDbShell } from "iter-db";
-export declare const runHttpServer: (shell: IterDbShell, port?: number) => void;
+export declare const runHttpServer: (shell: IterDbShell, port?: number, corsAllowOrigin?: string[]) => void;

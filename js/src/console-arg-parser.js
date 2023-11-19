@@ -35,7 +35,8 @@ var parseConsoleArgs = function () {
         token: (0, uuid_1.v4)(),
         writeDelay: 3000,
         unref: false,
-        port: 3000
+        port: 3000,
+        corsAllowOrigin: []
     };
     args.forEach(function (a, i) {
         if (a === "-at") {
@@ -56,6 +57,10 @@ var parseConsoleArgs = function () {
         else if (a === "-p") {
             params.port = parseInt(args[i + 1]);
         }
+        else if (a === "-cao") {
+            assert.ok(args[i + 1], "no cors-allow-origin value for flag -cao");
+            params.corsAllowOrigin.push(args[i + 1]);
+        }
     });
     console.log("authToken: " + params.token);
     return {
@@ -65,7 +70,8 @@ var parseConsoleArgs = function () {
             unref: params.unref,
             fileDelay: params.writeDelay
         }),
-        port: params.port
+        port: params.port,
+        corsAllowOrigin: params.corsAllowOrigin
     };
 };
 exports.parseConsoleArgs = parseConsoleArgs;
