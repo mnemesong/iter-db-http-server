@@ -2,7 +2,7 @@
   "name": "iter-db-http-server",
   "version": "0.0.2",
   "description": "server, runs iter-db database",
-  "main": "index.js",
+  "main": "./js/src/index.js",
   "scripts": {
     "tsc": "tsc",
     "server": "node ./js/src/bin -p 3000 -fp ./test.json -at 111 -at asdlkmsa -cao *",
